@@ -1,0 +1,102 @@
+.header {
+    position: sticky;
+    background-color: #4C4C4C;
+    height: 64px;
+   overflow: hidden;
+
+    &__wrapper {
+        position: relative;
+        padding: 21px 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    &__button {
+       position: absolute;
+       right: 15px;
+       cursor: pointer;
+
+        &_line {
+            display: block;
+            width: 34px;
+            height: 2.5px;
+            background-color: #0ACF00;
+            margin-top: 8px;
+            transition: 0.3s;
+        }
+        &_line:first-child {
+            margin: 0;
+        }
+
+        &.active {
+            .header__button_line {
+                margin: 0;
+            }
+            .header__button_line:nth-child(2) {
+                opacity: 0;
+            }
+            .header__button_line:first-child {
+                transform: rotate(-45deg) translateY(4px);
+            }
+            .header__button_line:last-child {
+                transform: rotate(45deg) translateY(-4px);
+            }
+        }
+       
+    }
+
+    &__nav {
+        position: fixed;
+        top: 64px;
+        width: 100%;
+        height: 100%;
+        transition: 0.4s;
+        transform: translateX(100%);
+
+        &.active {
+            transform: translateX(0);
+        }
+    }
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        &_link {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            text-decoration: none;
+        }
+    }
+
+    &__list-contact {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: .3s;
+
+        &_link {
+            display: flex;
+            justify-content: center;
+            transition: .3s;
+            text-decoration: none;
+            
+        }
+
+        &.active {
+            max-height: fit-content;
+            opacity: 1;
+
+            .header__list-contact_link {
+                padding: 20px 0;
+            
+            }
+        }
+    }
+}
