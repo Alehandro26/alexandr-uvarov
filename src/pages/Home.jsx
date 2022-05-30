@@ -1,9 +1,11 @@
-import Main from "./componentes/Main";
+import Main from "../componentes/Main";
+import Skills from "../componentes/Skills";
 
 function Home() {
   return (
     <>
       <Main />
+      <Skills />
     </>
   );
 }

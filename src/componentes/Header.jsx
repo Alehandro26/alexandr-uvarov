@@ -1,71 +1,109 @@
 import { useRef } from "react";
 import "./Header.scss";
+import inst from "../assets/images/icons/inst.svg";
+import telegram from "../assets/images/icons/telegram.svg";
+import whats from "../assets/images/icons/whats.svg";
 
 function Header() {
+  const body = document.body;
   const buttonRef = useRef();
   const popupRef = useRef();
   const buttonContactRef = useRef();
-  const listContact = useRef();
+  const listContactRef = useRef();
 
   const popup = () => {
     popupRef.current.classList.toggle("active");
     buttonRef.current.classList.toggle("active");
+    body.classList.toggle("not-scroll");
+  };
+
+  const contactsRemove = () => {
+    buttonContactRef.current.classList.remove("active");
+    listContactRef.current.classList.remove("active");
+  };
+
+  const popupContact = () => {
+    popup();
+    contactsRemove();
   };
 
   const contacts = () => {
     buttonContactRef.current.classList.toggle("active");
-    listContact.current.classList.toggle("active");
+    listContactRef.current.classList.toggle("active");
   };
 
   return (
     <header className="header">
       <div className="header__wrapper">
-        <div className="header__image">
-          <img src="/main.jpg" alt="logo" className="header__image_logo" />
-        </div>
-        <div className="header__button" ref={buttonRef} onClick={popup}>
+        <a href="#" className="header__logo">
+          <p className="header__logo_text">
+            <span>A</span>lexandr
+          </p>
+          <p className="header__logo_text-two">Uvarov</p>
+        </a>
+        <div className="header__button" ref={buttonRef} onClick={popupContact}>
           <span className="header__button_line"></span>
           <span className="header__button_line"></span>
           <span className="header__button_line"></span>
         </div>
       </div>
       <nav className="header__nav" ref={popupRef}>
+        <div className="header__nav_bgr" onClick={popupContact}></div>
         <ul className="header__list">
-          <li className="header__list_item">
-            <a href="#" className="header__list_link" onClick={popup}>
+          <li className="header__item">
+            <a href="#" className="header__link" onClick={popupContact}>
               Home
             </a>
           </li>
-          <li className="header__list_item">
-            <a href="#" className="header__list_link" onClick={popup}>
+          <li className="header__item">
+            <a href="#" className="header__link" onClick={popupContact}>
               Works
             </a>
           </li>
-          <li className="header__list_item">
+          <li className="header__item">
             <div
               href="#"
               ref={buttonContactRef}
               onClick={contacts}
-              className="header__list_link"
+              className="header__link"
             >
-              Contacts
+              Contacts{" "}
+              <span>
+                <svg
+                  width="16"
+                  height="10"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.97637 5.07191L9.33367 0.7146L9.95239 1.33332L5.28573 5.99999L4.66701 5.99998L0.000340435 1.33332L0.61906 0.714599L4.97637 5.07191Z"
+                    fill="#424242"
+                  />
+                </svg>
+              </span>
             </div>
           </li>
         </ul>
-        <ul className="header__list-contact" ref={listContact}>
-          <li className="header__list-contact_item">
-            <a href="" className="header__list-contact_link">
+        <ul className="header__list-contact" ref={listContactRef}>
+          <li className="header__item-contact">
+            <a href="" className="header__link-contact">
               Instagram
+              <img src={inst} alt="" className="header__icon-contact" />
             </a>
           </li>
-          <li className="header__list-contact_item">
-            <a href="" className="header__list-contact_link">
+          <li className="header__item-contact">
+            <a href="" className="header__link-contact">
               What's up
+              <img src={whats} alt="" className="header__icon-contact" />
             </a>
           </li>
-          <li className="header__list-contact_item">
-            <a href="" className="header__list-contact_link">
+          <li className="header__item-contact">
+            <a href="" className="header__link-contact">
               Telegram
+              <img src={telegram} alt="" className="header__icon-contact" />
             </a>
           </li>
         </ul>

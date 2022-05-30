@@ -1,0 +1,80 @@
+.main {
+    padding-bottom: 50px;
+    
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__object {
+        position: relative;
+        padding: 40px 0;
+        overflow: hidden;
+    }
+
+    &__image {
+        width: 100%;
+        transform: scale(1.4);
+        margin-left: 20px;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__animation-block {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__title {
+        white-space: nowrap;
+    }
+
+    &__animation-wrapper {
+        width: 100%;
+        padding-right: 15px;
+    }
+
+    &__animation {
+        position: relative;
+        width: 20px;
+        height: 6px;
+        border-radius: 15px;
+        background-color: #0ACF00;
+        animation: mainAnimation  5s linear infinite;
+    }
+
+    &__button {
+        font-size: 18px;
+        color: white;
+        background-color: #0ACF00;
+        padding: 10px;
+        border-radius: 15px;
+        transition: .2s;
+    }
+    &__button:active {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes mainAnimation {
+    0% {
+        left: 0;
+        width: 20px;
+    }
+  
+    50% {
+        left: 100%;
+        width: 10px;
+        
+    }
+    100% {
+        left: 0;
+        width: 20px;
+    }
+}
