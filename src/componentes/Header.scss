@@ -51,6 +51,7 @@
             background-color: #0ACF00;
             margin-top: 8px;
             transition: 0.3s;
+            border-radius: 15px;
         }
         &_line:first-child {
             margin: 0;
@@ -132,7 +133,7 @@
             right: 15px;
             transition: .2s;
         }
-        &.active {
+        &.active-button {
             border-bottom: 1px solid #0ACF00;
              span {
                 transform: rotate(180deg);

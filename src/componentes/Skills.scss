@@ -1,9 +1,77 @@
 .skills {
-
+  padding: 50px 0;
+  
   &__cards {
-    display: flex;
-      flex-direction: column;
-      gap: 30px;
-      align-items: center;
+    padding-top: 30px;
   }
-}
+
+  &__title {
+    span {
+      color: #0ACF00;
+    }
+  }
+
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-list {
+    padding-left: 10px;
+  }
+
+  .slick-initialized .slick-slide {
+    display: flex;
+    height: inherit;
+    div {
+      display: flex;
+    }
+  }
+
+  .slick-slide:first-child {
+    .card__title {
+      color: orange;
+      
+      &_after,
+      &_before {
+        color: white;
+      }
+    }
+      
+    .card__image {
+      height: 110px;
+    }
+  }
+
+  .slick-slide:nth-child(2) {
+    .card__title {
+      color: rgb(67, 67, 255);
+      
+      &_after {
+        color: white;
+      }
+    }
+  }
+                
+  .slick-slide:nth-child(3) {
+    .card__title {
+      color: yellow;
+    
+      &_after,
+      &_before {
+        color: white;
+      }
+    }
+  }
+
+  .slick-slide:last-child {
+    .card__title {
+      color: rgb(0, 166, 255);
+    
+      &_after,
+      &_before {
+        color: white;
+      }
+    }
+  }
+                
+} 

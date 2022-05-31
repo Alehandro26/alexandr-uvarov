@@ -3,6 +3,7 @@ import "./Header.scss";
 import inst from "../assets/images/icons/inst.svg";
 import telegram from "../assets/images/icons/telegram.svg";
 import whats from "../assets/images/icons/whats.svg";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   const body = document.body;
@@ -28,19 +29,19 @@ function Header() {
   };
 
   const contacts = () => {
-    buttonContactRef.current.classList.toggle("active");
+    buttonContactRef.current.classList.toggle("active-button");
     listContactRef.current.classList.toggle("active");
   };
 
   return (
     <header className="header">
       <div className="header__wrapper">
-        <a href="#" className="header__logo">
+        <NavLink to="/" className="header__logo">
           <p className="header__logo_text">
             <span>A</span>lexandr
           </p>
           <p className="header__logo_text-two">Uvarov</p>
-        </a>
+        </NavLink>
         <div className="header__button" ref={buttonRef} onClick={popupContact}>
           <span className="header__button_line"></span>
           <span className="header__button_line"></span>
@@ -51,14 +52,14 @@ function Header() {
         <div className="header__nav_bgr" onClick={popupContact}></div>
         <ul className="header__list">
           <li className="header__item">
-            <a href="#" className="header__link" onClick={popupContact}>
+            <NavLink to="/" className="header__link" onClick={popupContact}>
               Home
-            </a>
+            </NavLink>
           </li>
           <li className="header__item">
-            <a href="#" className="header__link" onClick={popupContact}>
+            <NavLink to="works" className="header__link" onClick={popupContact}>
               Works
-            </a>
+            </NavLink>
           </li>
           <li className="header__item">
             <div
