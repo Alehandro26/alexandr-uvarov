@@ -2,12 +2,14 @@ import { useRef } from "react";
 import "./Main.scss";
 
 function Main() {
+  const body = document.body;
   const buttonMainRef = useRef();
   const popupMainRef = useRef();
 
   const popupMain = () => {
     buttonMainRef.current.classList.toggle("active");
     popupMainRef.current.classList.toggle("active");
+    body.classList.toggle("not-scroll");
   };
 
   return (
@@ -45,6 +47,7 @@ function Main() {
         </div>
       </div>
       <div className="popup" ref={popupMainRef}>
+        <div className="popup__bgr" onClick={popupMain}></div>
         <div className="popup__wrapper">
           <div className="popup__exit-wrapper">
             <div className="popup__animation"></div>
@@ -54,7 +57,44 @@ function Main() {
             </div>
           </div>
           <h3 className="popup__title">Request</h3>
-          <form action="" className="popup__form"></form>
+          <form action="#" className="popup__form form">
+            <div className="form__item">
+              <label htmlFor="nameForm" className="form__label">
+                Name:
+              </label>
+              <input
+                type="text"
+                id="nameForm"
+                name="name"
+                placeholder="Alexandr"
+                className="form__input"
+              />
+            </div>
+            <div className="form__item">
+              <label htmlFor="emailForm" className="form__label">
+                Number:
+              </label>
+              <input
+                type="number"
+                id="emailForm"
+                name="number"
+                placeholder="+"
+                className="form__input"
+              />
+            </div>
+            <div className="form__item">
+              <label htmlFor="" className="form__text"></label>
+              <textarea
+                name="message"
+                id="messageForm"
+                className="textarea form__input"
+                placeholder="Your text"
+              ></textarea>
+            </div>
+            <button type="submit" className="form__button">
+              Send
+            </button>
+          </form>
         </div>
       </div>
     </section>

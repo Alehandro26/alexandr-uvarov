@@ -79,15 +79,15 @@
         top: 64px;
         width: 100%;
         height: 100%;
-        transform: translateY(-100%);
+        top: -100%;
         transition: .3s;
 
         &.active {
-            transform: translateY(0);
+            top: 64px;
             
             .header__nav_bgr {
-                opacity: 1;
-                transition: 0;
+                animation: bgrAnimation 1 .5s forwards;
+                animation-delay: .4s;
             }
         }
 
@@ -96,8 +96,7 @@
             width: 100%;
             height: 100%;
             opacity: 0;
-            transition: 3s;
-            background: rgba(0, 0, 0, .6);
+            background-color: rgba(0, 0, 0, 0.325);
         }
     }
     &__list {
