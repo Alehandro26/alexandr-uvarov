@@ -50,7 +50,6 @@ function Main() {
         <div className="popup__bgr" onClick={popupMain}></div>
         <div className="popup__wrapper">
           <div className="popup__exit-wrapper">
-            <div className="popup__animation"></div>
             <div className="popup__exit" onClick={popupMain}>
               <span className="popup__line"></span>
               <span className="popup__line"></span>

@@ -11,10 +11,23 @@
   &__image-wrap {
     display: flex;
     justify-content: center;
+    max-width: 370px;
+  }
+
+  &__animated {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.95;
+    background-color: #0ACF00;
+    transform: translate(80px, 0px);
+    animation: aboutAnimated infinite 18s ease;
   }
 
   &__image {
     width: 85%;
+    position: relative;
   }
 
   &__text {
@@ -28,5 +41,53 @@
     span {
       color: #0ACF00;
     }
+  }
+}
+
+
+@keyframes aboutAnimated {
+  0% {
+    transform: translate(80px, 0px);
+    z-index: 1;
+  }
+  12.5% {
+    transform: translate(10px, 130px);
+  }
+  25% {
+    transform: translate(0px, 60px);
+  }
+  37.5% {
+    transform: translate(-50px, 50px);
+    
+  }
+  50% {
+    transform: translate(-80px, 100px);
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+  }
+  62.5% {
+    transform: translate(-60px, 140px);
+  }
+  72% {
+    transform: translate(100px, 250px);
+    width: 28px;
+    height: 28px;
+    z-index: 1;
+  }
+  73% {
+    z-index: -1;
+  }
+  87.5% {
+    transform: translate(-100px, -20px);
+    z-index: -1;
+  }
+  95% {
+    transform: translate(30px, -50px);
+    z-index: -1;
+  }
+  100% {
+    transform: translate(80px, 0px);
+    z-index: 1;
   }
 }
