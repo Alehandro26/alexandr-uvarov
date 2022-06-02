@@ -38,9 +38,8 @@ function Header() {
       <div className="header__wrapper">
         <NavLink to="/" className="header__logo">
           <p className="header__logo_text">
-            <span>A</span>lexandr
+            <span>A</span>lexandr Uvarov
           </p>
-          <p className="header__logo_text-two">Uvarov</p>
         </NavLink>
         <div className="header__button" ref={buttonRef} onClick={popupContact}>
           <span className="header__button_line"></span>

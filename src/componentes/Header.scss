@@ -2,7 +2,7 @@
     position: sticky;   
     height: 64px;
     overflow: hidden;
-    z-index: 1;
+    z-index: 5;
     top: 0;
 
     &__wrapper {
@@ -20,20 +20,14 @@
         text-decoration: none;
 
         &_text {
-            font-size: 18px;
-            line-height: 18px;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 1px;
             color: white;
             span {
                 color: #0ACF00;
             }
-        }
-
-        &_text-two {
-            font-size: 18px;
-            line-height: 18px;
-            color: white;
-            padding-left: 25px;
-            margin-top: -5px;
         }
 
     }
@@ -126,6 +120,8 @@
         font-size: 16px;
         transition: .2s;
         cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
 
         span {
             position: absolute;
@@ -182,7 +178,7 @@
         transition: .3s;
         text-decoration: none;
         color: black;
-        font-size: 16px;
+        font-size: 14px;
     }
     
     &__link-contact:active {
