@@ -37,7 +37,7 @@ function Card({ img, title, subtitle, link }) {
             <h4 className="work-card__title">{title}</h4>
             <p className="work-card__subtitle">{subtitle}</p>
           </div>
-          <a href={link} className="work-card__link">
+          <a href={link} target="_blank" className="work-card__link">
             Follow
           </a>
         </div>

@@ -24,11 +24,13 @@ function MyWorks() {
             title="Budu"
             subtitle="I created that page, but it has already been slightly modified"
             img={budu}
+            link="https://budu.ru/business/online"
           ></WorksCard>
           <WorksCard
             title="Solid"
             subtitle="Paint company. The code + WordPress"
             img={solid}
+            link="https://solidrus.com/"
           ></WorksCard>
         </div>
       </div>

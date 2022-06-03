@@ -1,5 +1,62 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Main.scss";
+import emailjs from "emailjs-com";
+
+const useValidation = (value, validations) => {
+  const [isEmpty, setEmpty] = useState(true);
+  const [minLengthError, setMinLengthError] = useState(false);
+  const [inputValid, setInputValid] = useState(false);
+
+  useEffect(() => {
+    for (const validation in validations) {
+      switch (validation) {
+        case "minLength":
+          value.length < validations[validation]
+            ? setMinLengthError(true)
+            : setMinLengthError(false);
+          break;
+        case "isEmpty":
+          value ? setEmpty(false) : setEmpty(true);
+          break;
+      }
+    }
+  }, [value]);
+
+  useEffect(() => {
+    if (isEmpty || minLengthError) {
+      setInputValid(false);
+    } else {
+      setInputValid(true);
+    }
+  }, [isEmpty, minLengthError]);
+
+  return {
+    isEmpty,
+    minLengthError,
+    inputValid,
+  };
+};
+
+const useInput = (initialValue, validations) => {
+  const [value, setValue] = useState(initialValue);
+  const [isDirty, setDirty] = useState(false);
+  const valid = useValidation(value, validations);
+  const onChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  const onBlur = () => {
+    setDirty(true);
+  };
+
+  return {
+    value,
+    onChange,
+    onBlur,
+    isDirty,
+    ...valid,
+  };
+};
 
 function Main() {
   const body = document.body;
@@ -11,6 +68,27 @@ function Main() {
     popupMainRef.current.classList.toggle("active");
     body.classList.toggle("not-scroll");
   };
+
+  const name = useInput("", { isEmpty: true, minLength: 2 });
+  const number = useInput("", { isEmpty: true, minLength: 11 });
+
+  const form = useRef();
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("gmail", "template_pxiujpm", form.current, "FuF4LLcHu-TaLR4tf")
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  }
 
   return (
     <section className="main">
@@ -56,15 +134,29 @@ function Main() {
             </div>
           </div>
           <h3 className="popup__title">Request</h3>
-          <form action="#" className="popup__form form">
+          <form
+            onSubmit={sendEmail}
+            ref={form}
+            action="#"
+            className="popup__form form"
+          >
             <div className="form__item">
               <label htmlFor="nameForm" className="form__label">
                 Name:
               </label>
+              {name.isDirty && name.isEmpty && (
+                <div style={{ color: "red" }}>The field cannot be empty</div>
+              )}
+              {name.isDirty && name.minLengthError && (
+                <div style={{ color: "red" }}>Incorrect length</div>
+              )}
               <input
                 type="text"
                 id="nameForm"
                 name="name"
+                value={name.value}
+                onChange={(e) => name.onChange(e)}
+                onBlur={(e) => name.onBlur(e)}
                 placeholder="Alexandr"
                 className="form__input"
               />
@@ -73,16 +165,24 @@ function Main() {
               <label htmlFor="emailForm" className="form__label">
                 Number:
               </label>
+              {number.isDirty && number.isEmpty && (
+                <div style={{ color: "red" }}>The field cannot be empty</div>
+              )}
+              {number.isDirty && number.minLengthError && (
+                <div style={{ color: "red" }}>Incorrect length</div>
+              )}
               <input
                 type="number"
                 id="emailForm"
                 name="number"
-                placeholder="+"
+                value={number.value}
+                onChange={(e) => number.onChange(e)}
+                onBlur={(e) => number.onBlur(e)}
+                placeholder="79999990000"
                 className="form__input"
               />
             </div>
             <div className="form__item">
-              <label htmlFor="" className="form__text"></label>
               <textarea
                 name="message"
                 id="messageForm"
@@ -90,7 +190,12 @@ function Main() {
                 placeholder="Your text"
               ></textarea>
             </div>
-            <button type="submit" className="form__button">
+            <button
+              disabled={!name.inputValid || !number.inputValid}
+              type="submit"
+              className="form__button"
+              value="Send"
+            >
               Send
             </button>
           </form>
