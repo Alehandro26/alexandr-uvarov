@@ -1,0 +1,144 @@
+.work-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+
+    &__bgr {
+        position: absolute;
+    }
+
+    &__popup {
+        position: relative;
+    }
+
+    &__popup-wrapper {
+        transition: .4s;
+        border-radius: 15px;
+    }
+
+    &__wrapper {
+        position: relative;
+        box-shadow: 1000px 1px 15px -1px rgba(0, 0, 0, 0.68) inset;
+    }
+
+    &__exit-wrapper {
+        position: absolute;
+        z-index: -3;
+        top: 0;
+        right: 0;
+        background-color: white;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+    }
+
+    &__image {
+        display: block;
+        position: relative;
+        z-index: -1;
+        width: 100%;
+    }
+
+    &__text {
+        position: absolute;
+        text-align: center;
+        transform: translate(-50%, 50%);
+        left: 50%;
+        bottom: 50%;
+    }
+
+    &__title {
+        color: #0ACF00;
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+
+    &__subtitle {
+        color: white;
+    }
+
+    &__link {
+        display: block;
+        position: relative;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    &.active {
+        z-index: 10;
+        .work-card__bgr {
+            position: relative;
+            opacity: 0;
+        }
+
+        .work-card__popup {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .work-card__popup-wrapper {
+            position: relative;
+            max-width: 420px;
+            padding: 10px 20px;
+            background-color: white;
+        }
+
+        .work-card__exit-wrapper {
+            z-index: 9;
+        }
+
+        .work-card__wrapper {
+            padding-bottom: 20px;
+            box-shadow: none;
+        }
+
+        .popup-image {
+            z-index: 2;
+        }
+
+        .work-card__text {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            transform: translate(0);
+            padding-bottom: 20px;
+        }
+
+        .work-card__subtitle {
+            color: black;
+        }
+
+        .work-card__link {
+            max-height: fit-content;
+            text-align: center;
+            position: relative;
+            font-size: 18px;
+            color: white;
+            background-color: #0ACF00;
+            padding: 10px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .work-card__popup-bgr {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.325);
+            opacity: 0;
+            animation: bgrAnimation 1 0.5s forwards;
+            animation-delay: 0.4s;
+        }
+    }
+}

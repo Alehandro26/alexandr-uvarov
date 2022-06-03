@@ -66,13 +66,13 @@
         transition: .3s;
 
         &.active {
-            
+            transform: scale(0.85);
+            border-radius: 30px;
         }
+
+       
     }
-    &__button:active {
-        transform: scale(0.85);
-        border-radius: 50%;
-    }
+    
 }
 
 .popup {

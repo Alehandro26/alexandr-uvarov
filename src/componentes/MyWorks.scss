@@ -1,0 +1,18 @@
+.works {
+  padding: 50px 0;
+
+  &__text {
+    padding-bottom: 30px;
+  }
+  &__title {
+    padding-bottom: 10px;
+    span {
+      color: #0ACF00;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 20px;
+  }
+}
