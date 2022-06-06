@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+@mixin tablet {
+  @media (min-width: 768px) { @content };
+}
+
+@mixin laptop {
+  @media (min-width: 1024px) { @content
+  };
+}
+
+@mixin laptopL {
+  @media (min-width: 1100px) { @content };
+}
+
+
+.container {
+  padding: 0 10px;
+  @include tablet {
+    padding: 0 20px;
+  }
+  @include laptop {
+    padding: 0 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 140%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 30px;
+
+  @include tablet {
+    font-size: 34px;
+  }
+}
+
+h2 {
+  font-size: 28px;
+
+  @include tablet {
+    font-size: 32px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 700;
+
+  @include tablet {
+    font-size: 28px;
+  }
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+
+  @include tablet {
+    font-size: 18px;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+
+  @include tablet {
+    font-size: 20px;
+  }
+}
+
+li {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+
+  @include tablet {
+    font-size: 18px;
+  }
+}

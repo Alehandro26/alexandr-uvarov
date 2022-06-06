@@ -1,0 +1,79 @@
+@import "../App.scss";
+
+.menu-des {
+    display: none;
+
+    @include laptopL {
+        display: block;
+        position: absolute;
+        right: 15%;
+    }
+
+    &__list {
+        display: flex;
+        gap: 2.8vw;
+        list-style: none;
+    }
+
+    &__item:not(:last-child) {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+
+        &.active {
+            color: #0ACF00;
+        }
+    }
+
+    &__button {
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        color: white;
+        background: none;
+        cursor: pointer;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__list-contact {
+        position: fixed;
+        list-style: none;
+        padding-top: 12px;
+        border-radius: 0 0 15px 15px;
+        overflow: hidden;
+        top: -100%;
+    }
+
+    &__item-contact {
+        background-color: white;
+        padding: 10px 15px;
+    }
+
+    &__link-contact {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 14px;
+        justify-content: space-between;
+        color: black;
+    }
+
+    &__image {
+        width: 20px;
+    }
+
+    &__item:hover {
+        .menu-des__list-contact {
+            top: auto;
+        }
+    }
+}

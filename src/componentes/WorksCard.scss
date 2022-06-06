@@ -3,6 +3,7 @@
     border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
+    max-width: 400px;
 
     &__bgr {
         position: absolute;
@@ -84,13 +85,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 0 10px;
+            padding: 0 25px;
         }
 
         .work-card__popup-wrapper {
             position: relative;
-            max-width: 420px;
-            padding: 10px 20px;
+            max-width: 400px;
+            padding: 20px;
             background-color: white;
         }
 

@@ -101,7 +101,7 @@ function Main() {
               className="main__image"
             />
           </div>
-          <div className="main__text container">
+          <div className="main__text">
             <div className="main__animation-block">
               <h1 className="main__title">
                 <span>Web-</span>developer

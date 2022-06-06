@@ -3,7 +3,8 @@ import "./Header.scss";
 import inst from "../assets/images/icons/inst.svg";
 import telegram from "../assets/images/icons/telegram.svg";
 import whats from "../assets/images/icons/whats.svg";
-import { NavLink } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
+import MenuDes from "./MenuDes";
 
 function Header() {
   const body = document.body;
@@ -36,29 +37,38 @@ function Header() {
   return (
     <header className="header">
       <div className="header__wrapper">
-        <NavLink to="/" className="header__logo">
+        <NavHashLink to="/#top" className="header__logo">
           <p className="header__logo_text">
             <span>A</span>lexandr Uvarov
           </p>
-        </NavLink>
+        </NavHashLink>
         <div className="header__button" ref={buttonRef} onClick={popupContact}>
           <span className="header__button_line"></span>
           <span className="header__button_line"></span>
           <span className="header__button_line"></span>
         </div>
+        <MenuDes />
       </div>
       <nav className="header__nav" ref={popupRef}>
         <div className="header__nav_bgr" onClick={popupContact}></div>
         <ul className="header__list">
           <li className="header__item">
-            <NavLink to="/" className="header__link" onClick={popupContact}>
+            <NavHashLink
+              to="/#top"
+              className="header__link"
+              onClick={popupContact}
+            >
               Home
-            </NavLink>
+            </NavHashLink>
           </li>
           <li className="header__item">
-            <NavLink to="works" className="header__link" onClick={popupContact}>
+            <NavHashLink
+              to="works#top"
+              className="header__link"
+              onClick={popupContact}
+            >
               Works
-            </NavLink>
+            </NavHashLink>
           </li>
           <li className="header__item">
             <div
@@ -95,8 +105,11 @@ function Header() {
             </a>
           </li>
           <li className="header__item-contact">
-            <a href="" className="header__link-contact">
-              What's up
+            <a
+              href="https://wa.me/79620003743"
+              className="header__link-contact"
+            >
+              What's App
               <img src={whats} alt="" className="header__icon-contact" />
             </a>
           </li>

@@ -26,10 +26,19 @@ function Skills() {
         settings: {
           slidesToShow: 2,
           centerMode: false,
+          variableWidth: false,
         },
       },
       {
-        breakpoint: 1400,
+        breakpoint: 1324,
+        settings: {
+          slidesToShow: 2,
+          centerMode: false,
+          variableWidth: false,
+        },
+      },
+      {
+        breakpoint: 1800,
         settings: {
           slidesToShow: 3,
           centerMode: false,

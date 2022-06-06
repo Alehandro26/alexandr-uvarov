@@ -1,3 +1,5 @@
+@import "../App.scss";
+
 .header {
     position: sticky;   
     height: 64px;
@@ -7,7 +9,6 @@
 
     &__wrapper {
         position: relative;
-        padding: 0 10px;
         height: 100%;
         display: flex;
         justify-content: center;
@@ -20,8 +21,8 @@
         text-decoration: none;
 
         &_text {
-            font-family: 'Cinzel', serif;
-            font-size: 16px;
+            font-family: 'Joan', serif;
+            font-size: 18px;
             line-height: 20px;
             letter-spacing: 1px;
             color: white;
@@ -37,6 +38,14 @@
        right: 15px;
        padding: 10px 0;
        cursor: pointer;
+
+       @include tablet {
+           right: 20px;
+       }
+
+       @include laptopL {
+            display: none;
+        }
 
         &_line {
             display: block;
@@ -70,14 +79,19 @@
 
     &__nav {
         position: fixed;
-        top: 64px;
         width: 100%;
         height: 100%;
         top: -100%;
         transition: .3s;
+        opacity: 0;
+
+        @include laptopL {
+            display: none;
+        }
 
         &.active {
             top: 64px;
+            opacity: 1;
             
             .header__nav_bgr {
                 animation: bgrAnimation 1 .5s forwards;
@@ -93,13 +107,19 @@
             background-color: rgba(0, 0, 0, 0.325);
         }
     }
+
     &__list {
         position: relative;
         z-index: 3;
         list-style: none;
         padding: 0;
         margin: 0;
-        background-color: white;    
+        background-color: white;   
+
+        @include tablet {
+            max-width: 400px;
+            margin-left: auto;
+        }
     }
 
     &__item {
@@ -122,6 +142,10 @@
         cursor: pointer;
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
+
+        @include tablet {
+            font-size: 18px;
+        }
 
         span {
             position: absolute;
@@ -151,6 +175,12 @@
         overflow: hidden;
         transition: .3s;
         background-color: white;
+
+        @include tablet {
+            max-width: 400px;
+            margin-left: auto;
+            border-radius: 0 0 0 15px;
+        }
 
         &.active {
             transform: translateY(0);

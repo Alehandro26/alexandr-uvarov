@@ -1,6 +1,7 @@
 import "./AboutMe.scss";
 import me from "../assets/images/me.png";
 import qadro from "../assets/images/qadrocopter.png";
+import qadro2 from "../assets/images/qadro2.png";
 
 function AboutMe() {
   return (
@@ -10,6 +11,9 @@ function AboutMe() {
           <img src={me} alt="Me" className="aboutme__image" />
           <div className="aboutme__animated">
             <img src={qadro} alt="" className="aboutme__qadro" />
+          </div>
+          <div className="aboutme__animated-two">
+            <img src={qadro2} alt="" className="aboutme__qadro" />
           </div>
         </div>
         <div className="aboutme__text">

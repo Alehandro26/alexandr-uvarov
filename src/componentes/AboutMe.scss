@@ -1,11 +1,25 @@
+@import "../App.scss";
+
 .aboutme {
   padding: 50px 0;
+
+  @include tablet {
+    padding: 80px 0;
+  }
 
   &__wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
+
+    @include tablet {
+      flex-direction: row;
+    }
+
+    @include laptop {
+      gap: 60px;
+    }
   }
 
   &__image-wrap {
@@ -14,19 +28,25 @@
     max-width: 370px;
   }
 
+  &__qadro {
+    width: 100%;
+  }
+
   &__animated {
     position: absolute;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    //background-color: #0ACF00;
     transform: translate(80px, 0px);
     animation: aboutAnimated infinite 18s ease;
   }
 
-  &__qadro {
-    width: 100%;
+  &__animated-two {
+    position: absolute;
+    width: 55px;
+    transform: translate(-70px, 250px);
+    animation: aboutAnimatedTwo infinite 19s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   }
+  
 
   &__image {
     width: 85%;
@@ -94,6 +114,70 @@
   }
   100% {
     transform: translate(80px, 0px);
+    z-index: 1;
+  }
+}
+
+@keyframes aboutAnimatedTwo {
+  0% {
+    transform: translate(-70px, 250px);
+  }
+
+  12.5% {
+    transform: translate(10px, 130px);
+    width: 45px;
+  }
+
+  25% {
+    transform: translate(20px, 80px);
+    width: 40px;
+  }
+
+  37.5% {
+    transform: translate(-40px, 35px);
+    width: 35px;
+  }
+
+  50% {
+    transform: translate(-80px, 155px);
+    width: 55px;
+  }
+
+  62.5% {
+    transform: translate(-10px, 205px);
+    width: 65px;
+  }
+
+  72% {
+    transform: translate(-130px, -25px);
+    width: 36px;
+    z-index: 1;
+  }
+
+  73% {
+    z-index: -1;
+  }
+
+  80% {
+    transform: translate(160px, 195px);
+    width: 56px;
+    z-index: -1;
+  }
+
+  81% {
+    z-index: 1;
+  }
+
+  87.5% {
+    transform: translate(120px, 250px);
+  }
+
+  95% {
+    transform: translate(10px, 255px);
+  }
+
+  100% {
+    transform: translate(-70px, 250px);
     z-index: 1;
   }
 }

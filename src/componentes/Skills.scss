@@ -1,8 +1,19 @@
+@import "../App.scss";
+
 .skills {
   padding: 50px 0;
+
+  @include tablet {
+    padding: 80px 0;
+  }
   
   &__cards {
     padding-top: 30px;
+
+    @media (min-width: 1800px) {
+      max-width: 1800px;
+      margin: 0 auto;
+    }
   }
 
   &__title {
@@ -17,6 +28,10 @@
 
   .slick-list {
     padding-left: 10px;
+
+    @include tablet {
+      padding-left: 20px;
+    }
   }
 
   .slick-initialized .slick-slide {
@@ -39,6 +54,10 @@
       
     .card__image {
       height: 110px;
+
+      @include tablet {
+        height: 155px;
+      }
     }
   }
 

@@ -1,13 +1,28 @@
+@import "../App.scss";
+
 .card {
   background-color: #4C4C4C;
   width: 320px;
   border-radius: 15px;
   margin-right: 20px;
 
+  @include tablet {
+    width: auto;
+    min-width: 360px;
+  }
+
+  @include laptop {
+    min-width: 420px;
+  }
+
   &__wrapper {
     display: flex;
     padding: 20px 10px;
     width: 100%;
+
+    @include tablet {
+      padding: 20px;
+    }
   }
 
   &__text {
@@ -15,11 +30,19 @@
     white-space: nowrap;
     display: flex;
     flex-direction: column;
+    gap: 10px;
+
+    @include tablet {
+      padding: 10px 0;
+    }
   }
 
   &__list {
     list-style: none;
     color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
 
   &__wrap-image {
@@ -32,6 +55,10 @@
   &__image {
     height: 100px;
     max-width: 100%;
+
+    @include tablet {
+      height: 140px;
+    }
   }
 
 }

@@ -2,7 +2,7 @@ import "./Footer.scss";
 import inst from "../assets/images/icons/inst.svg";
 import telegram from "../assets/images/icons/telegram.svg";
 import whats from "../assets/images/icons/whats.svg";
-import { NavLink } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 
 function Footer() {
   return (
@@ -11,14 +11,14 @@ function Footer() {
         <nav className="footer__nav">
           <ul className="footer__list">
             <li className="footer__item">
-              <NavLink to="/" className="footer__link">
+              <NavHashLink to="/#top" className="footer__link">
                 Home
-              </NavLink>
+              </NavHashLink>
             </li>
             <li className="footer__item">
-              <NavLink to="works" className="footer__link">
+              <NavHashLink to="works/#top" className="footer__link">
                 Works
-              </NavLink>
+              </NavHashLink>
             </li>
           </ul>
           <div className="footer__contact">
@@ -29,7 +29,11 @@ function Footer() {
               <img src={telegram} alt="" className="footer__image" />
             </a>
             <a href="" className="footer__link-contact">
-              <img src={whats} alt="" className="footer__image" />
+              <img
+                src={whats}
+                alt="https://wa.me/79620003743"
+                className="footer__image"
+              />
             </a>
           </div>
         </nav>
