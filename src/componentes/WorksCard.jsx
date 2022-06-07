@@ -33,7 +33,7 @@ function Card({ img, title, subtitle, link }) {
             <img src={img} alt="" className="work-card__image popup-image" />
           </div>
 
-          <div className="work-card__text">
+          <div className="work-card__text" onClick={workCard}>
             <h4 className="work-card__title">{title}</h4>
             <p className="work-card__subtitle">{subtitle}</p>
           </div>
