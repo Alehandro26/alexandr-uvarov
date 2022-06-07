@@ -1,3 +1,5 @@
+@import "../App.scss";
+
 .work-card {
     position: relative;
     border-radius: 15px;
@@ -142,4 +144,13 @@
             animation-delay: 0.4s;
         }
     }
+}
+
+.work-card:nth-child(2) {
+    @include tablet {
+    max-width: 550px;
+    grid-area: budu;
+    align-self: center;
+    }
+    
 }

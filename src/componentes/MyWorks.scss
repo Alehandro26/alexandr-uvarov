@@ -30,6 +30,13 @@
 
     @include tablet {
       gap: 40px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 'poly budu'
+                            'solid budu';
     }
+  }
+
+  &__git {
+    color: #0ACF00;
   }
 }

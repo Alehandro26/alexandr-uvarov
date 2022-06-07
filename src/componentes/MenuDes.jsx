@@ -43,7 +43,10 @@ function MenuDes() {
 
           <ul className="menu-des__list-contact">
             <li className="menu-des__item-contact">
-              <a href="" className="menu-des__link-contact">
+              <a
+                href="https://instagram.com/_uvarov_aa?igshid=YmMyMTA2M2Y="
+                className="menu-des__link-contact"
+              >
                 Instagram
                 <img src={inst} alt="" className="menu-des__image" />
               </a>
@@ -58,7 +61,10 @@ function MenuDes() {
               </a>
             </li>
             <li className="menu-des__item-contact">
-              <a href="" className="menu-des__link-contact">
+              <a
+                href="https://t.me/iammiracle0"
+                className="menu-des__link-contact"
+              >
                 Telegram
                 <img src={telegram} alt="" className="menu-des__image" />
               </a>

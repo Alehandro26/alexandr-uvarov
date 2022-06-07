@@ -112,7 +112,8 @@ function Main() {
             </div>
             <p className="main__subtitle">
               Do you want to get a new website? Do you need to edit an existing
-              site? Add content? Okay, text me and I'll solve your case.
+              site? Add content? Okay, text me and rest assured, I'll solve your
+              the problem.
             </p>
             <button
               className="main__button"

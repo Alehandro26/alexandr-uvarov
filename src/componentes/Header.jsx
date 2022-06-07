@@ -99,7 +99,10 @@ function Header() {
         </ul>
         <ul className="header__list-contact" ref={listContactRef}>
           <li className="header__item-contact">
-            <a href="" className="header__link-contact">
+            <a
+              href="https://instagram.com/_uvarov_aa?igshid=YmMyMTA2M2Y="
+              className="header__link-contact"
+            >
               Instagram
               <img src={inst} alt="" className="header__icon-contact" />
             </a>
@@ -114,7 +117,7 @@ function Header() {
             </a>
           </li>
           <li className="header__item-contact">
-            <a href="" className="header__link-contact">
+            <a href="https://t.me/iammiracle0" className="header__link-contact">
               Telegram
               <img src={telegram} alt="" className="header__icon-contact" />
             </a>

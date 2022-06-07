@@ -22,18 +22,20 @@ function Footer() {
             </li>
           </ul>
           <div className="footer__contact">
-            <a href="" className="footer__link-contact">
+            <a
+              href="https://instagram.com/_uvarov_aa?igshid=YmMyMTA2M2Y="
+              className="footer__link-contact"
+            >
               <img src={inst} alt="" className="footer__image" />
             </a>
-            <a href="" className="footer__link-contact">
+            <a href="https://t.me/iammiracle0" className="footer__link-contact">
               <img src={telegram} alt="" className="footer__image" />
             </a>
-            <a href="" className="footer__link-contact">
-              <img
-                src={whats}
-                alt="https://wa.me/79620003743"
-                className="footer__image"
-              />
+            <a
+              href="https://wa.me/79620003743"
+              className="footer__link-contact"
+            >
+              <img src={whats} alt="" className="footer__image" />
             </a>
           </div>
         </nav>

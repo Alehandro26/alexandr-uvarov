@@ -12,7 +12,12 @@ function MyWorks() {
           <h2 className="works__title">
             My <span>work</span>s
           </h2>
-          <p className="works__subtitle">Below are some of my works</p>
+          <p className="works__subtitle">
+            Below are some of my works. I'll push more works in my{" "}
+            <a href="https://github.com/Alehandro26" className="works__git">
+              GitHub
+            </a>
+          </p>
         </div>
         <div className="works__grid">
           <WorksCard

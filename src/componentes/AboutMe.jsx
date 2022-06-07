@@ -22,8 +22,9 @@ function AboutMe() {
           </h2>
           <p className="aboutme__subtitle">
             Hi. I'm Alexandr, and you? I'm twenty six years old, if you're
-            interested, but it doesn't matter anymore. I love to see the results
-            of my work. Hobby? Sport is my hobby. Okay, enough about me.
+            interested, but it doesn't matter anymore. I'm the web-developer
+            specializing in layout. I love to see the results of my work and
+            dogs. Hobby? Sport is my hobby.. and travel. Okay, enough about me.
           </p>
         </div>
       </div>

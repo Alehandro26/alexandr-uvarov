@@ -47,7 +47,7 @@
     &__list-contact {
         position: fixed;
         list-style: none;
-        padding-top: 12px;
+        padding-top: 13px;
         border-radius: 0 0 15px 15px;
         overflow: hidden;
         top: -100%;
@@ -73,7 +73,7 @@
 
     &__item:hover {
         .menu-des__list-contact {
-            top: auto;
+            top: 51px;
         }
     }
 }
