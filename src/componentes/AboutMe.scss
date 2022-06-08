@@ -20,12 +20,20 @@
     @include laptop {
       gap: 60px;
     }
+
+    @include laptopL {
+      gap: 140px;
+    }
   }
 
   &__image-wrap {
     display: flex;
     justify-content: center;
     max-width: 370px;
+
+    @include laptopL {
+      transform: scale(1.5) translateX(30px);
+    }
   }
 
   &__qadro {
@@ -58,6 +66,11 @@
     flex-direction: column;
     gap: 20px;
     width: 100%;
+
+    @include laptop {
+      max-width: 600px;
+      margin-left: auto;
+    }
   }
 
   &__title {
