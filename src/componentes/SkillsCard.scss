@@ -5,6 +5,8 @@
   width: 320px;
   border-radius: 15px;
   margin-right: 20px;
+  opacity: 0;
+  transform: translateX(-100%);
 
   @include tablet {
     width: auto;

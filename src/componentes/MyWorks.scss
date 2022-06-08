@@ -12,6 +12,8 @@
   }
 
   &__title {
+    transform: translateX(-100%);
+    opacity: 0;
     padding-bottom: 10px;
 
     span {
@@ -20,7 +22,8 @@
   }
 
   &__subtitle {
-    opacity: 0.6;
+    transform: translateX(-100%);
+    opacity: 0;
   }
 
   &__grid {

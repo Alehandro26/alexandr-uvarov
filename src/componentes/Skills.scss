@@ -17,9 +17,18 @@
   }
 
   &__title {
+    opacity: 0;
+    transform: translateX(-100%);
+    margin-bottom: 20px;
+
     span {
       color: #0ACF00;
     }
+  }
+
+  &__subtitle {
+    opacity: 0;
+    transform: translateX(-100%);
   }
 
   .slick-track {

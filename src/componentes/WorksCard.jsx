@@ -16,7 +16,7 @@ function Card({ img, title, subtitle, link }) {
   }
 
   return (
-    <div className="work-card" ref={workCardRef}>
+    <div className="work-card fade-right3" ref={workCardRef}>
       <div className="work-card__bgr">
         <img src={img} alt="" className="work-card__image bgr" />
       </div>

@@ -30,6 +30,7 @@
     display: flex;
     justify-content: center;
     max-width: 370px;
+    opacity: 0;
 
     @include laptopL {
       transform: scale(1.5) translateX(30px);
@@ -74,11 +75,15 @@
   }
 
   &__title {
+    opacity: 0;
+    transform: translateX(100%);
+    
     span {
       color: #0ACF00;
     }
   }
   &__subtitle {
+    transform: translateX(100%);
     opacity: 0.6;
   }
 }

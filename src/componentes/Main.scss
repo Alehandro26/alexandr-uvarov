@@ -34,6 +34,8 @@
         position: relative;
         padding: 40px 0;
         overflow: hidden;
+        opacity: 0;
+        transform: translateX(-100%);
 
         @include tablet {
             margin: 100px 20px 0px;
@@ -84,13 +86,18 @@
 
     &__title {
         white-space: nowrap;
+        transform: translateX(-100%);
+        opacity: 0;
+
         span {
             color: #0ACF00;
         }
     }
 
     &__subtitle {
-        opacity: 0.6;
+        transform: translateX(-100%);
+        opacity: 0;
+
         @include tablet {
             max-width: 450px;
         }
@@ -130,6 +137,8 @@
         border-radius: 15px;
         transition: .3s;
         cursor: pointer;
+        transform: translateX(-100%);
+        opacity: 0;
 
         @include tablet {
             max-width: 350px;
@@ -263,6 +272,7 @@
         padding: 10px;
         border-radius: 15px;
         transition: 0.3s;
+
         &:active {
             transform: scale(0.85);
             border-radius: 50%;
@@ -345,6 +355,4 @@
         left: 0;
     }
 }
-
-
 

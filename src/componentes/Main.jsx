@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./Main.scss";
 import emailjs from "../../node_modules/emailjs-com/";
+import gsap from "gsap";
+import { useIntersection } from "react-use";
 
 const useValidation = (value, validations) => {
   const [isEmpty, setEmpty] = useState(true);
@@ -95,11 +97,56 @@ function Main() {
     e.target.reset();
   }
 
+  const animationRef = useRef();
+
+  const intersection = useIntersection(animationRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.3,
+  });
+
+  const fadeIn = (element) => {
+    gsap.to(element, 1, {
+      opacity: 1,
+      x: 0,
+      ease: "power4.out",
+      stagger: {
+        amount: 0.5,
+      },
+    });
+  };
+
+  const fadeOut = (element) => {
+    gsap.to(element, 1, {
+      opacity: 0,
+      x: -100,
+    });
+  };
+
+  intersection && intersection.intersectionRatio < 0.3
+    ? fadeOut(".fade-right")
+    : fadeIn(".fade-right");
+
+  const fadeInSub = (element) => {
+    gsap.to(element, 1, {
+      opacity: 0.6,
+      x: 0,
+      ease: "power4.out",
+      stagger: {
+        amount: 0.3,
+      },
+    });
+  };
+
+  intersection && intersection.intersectionRatio < 0.3
+    ? fadeOut(".fade-right-sub")
+    : fadeInSub(".fade-right-sub");
+
   return (
-    <section className="main">
+    <section className="main" ref={animationRef}>
       <div className="main__wrapper">
         <div className="main__content">
-          <div className="main__object">
+          <div className="main__object fade-right">
             <img
               src={require("../assets/images/main.jpg")}
               alt="Main image"
@@ -108,20 +155,20 @@ function Main() {
           </div>
           <div className="main__text">
             <div className="main__animation-block">
-              <h1 className="main__title">
+              <h1 className="main__title fade-right">
                 <span>Web-</span>developer
               </h1>
               <div className="main__animation-wrapper">
                 <div className="main__animation"></div>
               </div>
             </div>
-            <p className="main__subtitle">
+            <p className="main__subtitle fade-right-sub">
               Do you want to get a new website? Do you need to edit an existing
               site? Add content? Okay, text me and rest assured, I'll solve your
               the problem.
             </p>
             <button
-              className="main__button"
+              className="main__button fade-right"
               onClick={popupMain}
               ref={buttonMainRef}
             >

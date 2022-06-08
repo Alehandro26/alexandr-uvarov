@@ -5,6 +5,9 @@ import css from "../assets/images/icons/css.svg";
 import js from "../assets/images/icons/js.svg";
 import react from "../assets/images/icons/react.svg";
 import Slider from "react-slick/lib/slider";
+import gsap from "gsap";
+import { useIntersection } from "react-use";
+import { useRef } from "react";
 
 function Skills() {
   const settings = {
@@ -46,13 +49,63 @@ function Skills() {
       },
     ],
   };
+
+  const animationRef = useRef();
+
+  const intersection = useIntersection(animationRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.3,
+  });
+
+  const fadeIn = (element) => {
+    gsap.to(element, 1, {
+      opacity: 1,
+      x: 0,
+      ease: "power4.out",
+      stagger: {
+        amount: 0.4,
+      },
+    });
+  };
+
+  const fadeOut = (element) => {
+    gsap.to(element, 1, {
+      opacity: 0,
+      x: -100,
+      ease: "power4.out",
+    });
+  };
+
+  intersection && intersection.intersectionRatio < 0.3
+    ? fadeOut(".fade-right2")
+    : fadeIn(".fade-right2");
+
+  const fadeInSub = (element) => {
+    gsap.to(element, 1, {
+      opacity: 0.6,
+      x: 0,
+      ease: "power4.out",
+      stagger: {
+        amount: 0.3,
+      },
+    });
+  };
+
+  intersection && intersection.intersectionRatio < 0.3
+    ? fadeOut(".fade-right-sub2")
+    : fadeInSub(".fade-right-sub2");
+
   return (
-    <section className="skills">
+    <section className="skills" ref={animationRef}>
       <div className="skills__wrapper">
         <div className="skills__text container">
-          <h2 className="skills__title">
+          <h2 className="skills__title fade-right2">
             S<span>kills</span>
           </h2>
+          <p className="skills__subtitle fade-right-sub2">
+            My level of knowledge is shown below
+          </p>
         </div>
         <div className="skills__cards">
           <Slider {...settings}>

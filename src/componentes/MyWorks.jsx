@@ -3,16 +3,65 @@ import "./MyWorks.scss";
 import poly from "../assets/images/poly.jpeg";
 import budu from "../assets/images/budu.jpeg";
 import solid from "../assets/images/solid.jpeg";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useIntersection } from "react-use";
 
 function MyWorks() {
+  const animationRef = useRef();
+
+  const intersection = useIntersection(animationRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.3,
+  });
+
+  const fadeIn = (element) => {
+    gsap.to(element, 1, {
+      opacity: 1,
+      x: 0,
+      ease: "power4.out",
+      stagger: {
+        amount: 1,
+      },
+    });
+  };
+
+  const fadeOut = (element) => {
+    gsap.to(element, 1, {
+      opacity: 0,
+      x: -100,
+      ease: "power4.out",
+    });
+  };
+
+  intersection && intersection.intersectionRatio < 0.3
+    ? fadeOut(".fade-right3")
+    : fadeIn(".fade-right3");
+
+  const fadeInSub = (element) => {
+    gsap.to(element, 1, {
+      opacity: 0.6,
+      x: 0,
+      ease: "power4.out",
+      stagger: {
+        amount: 0.3,
+      },
+    });
+  };
+
+  intersection && intersection.intersectionRatio < 0.3
+    ? fadeOut(".fade-right-sub3")
+    : fadeInSub(".fade-right-sub3");
+
   return (
-    <section className="works">
+    <section className="works" ref={animationRef}>
       <div className="works__wrapper container">
         <div className="works__text">
-          <h2 className="works__title">
+          <h2 className="works__title fade-right3">
             My <span>work</span>s
           </h2>
-          <p className="works__subtitle">
+          <p className="works__subtitle fade-right-sub3">
             Below are some of my works. I'll push more works in my{" "}
             <a href="https://github.com/Alehandro26" className="works__git">
               GitHub
