@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./Main.scss";
-import emailjs from "emailjs-com";
+import emailjs from "../../node_modules/emailjs-com/";
 
 const useValidation = (value, validations) => {
   const [isEmpty, setEmpty] = useState(true);
@@ -72,13 +72,18 @@ function Main() {
   const name = useInput("", { isEmpty: true, minLength: 2 });
   const number = useInput("", { isEmpty: true, minLength: 11 });
 
-  const form = useRef();
+  const formRef = useRef();
 
   function sendEmail(e) {
     e.preventDefault();
 
     emailjs
-      .sendForm("gmail", "template_pxiujpm", form.current, "FuF4LLcHu-TaLR4tf")
+      .sendForm(
+        "service_smyjk3j",
+        "template_pxiujpm",
+        formRef.current,
+        "FuF4LLcHu-TaLR4tf"
+      )
       .then(
         (result) => {
           console.log(result.text);
@@ -135,12 +140,7 @@ function Main() {
             </div>
           </div>
           <h3 className="popup__title">Request</h3>
-          <form
-            onSubmit={sendEmail}
-            ref={form}
-            action="#"
-            className="popup__form form"
-          >
+          <form onSubmit={sendEmail} ref={formRef} className="popup__form form">
             <div className="form__item">
               <label htmlFor="nameForm" className="form__label">
                 Name:
