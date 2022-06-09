@@ -1,8 +1,6 @@
 @import "../App.scss";
 
 .work-card {
-    opacity: 0;
-    transform: translateX(-100%);
     position: relative;
     border-radius: 15px;
     overflow: hidden;
@@ -60,10 +58,14 @@
         color: #0ACF00;
         font-size: 20px;
         padding-bottom: 10px;
+        opacity: 0;
+        transform: translateX(-100%);
     }
 
     &__subtitle {
         color: white;
+        opacity: 0;
+        transform: translateX(-100%);
     }
 
     &__link {
