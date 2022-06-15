@@ -22,7 +22,7 @@ function MyWorks() {
       x: 0,
       ease: "power4.out",
       stagger: {
-        amount: 1,
+        amount: 0.3,
       },
     });
   };
@@ -39,21 +39,6 @@ function MyWorks() {
     ? fadeOut(".fade-right3")
     : fadeIn(".fade-right3");
 
-  const fadeInSub = (element) => {
-    gsap.to(element, 1, {
-      opacity: 0.6,
-      x: 0,
-      ease: "power4.out",
-      stagger: {
-        amount: 0.3,
-      },
-    });
-  };
-
-  intersection && intersection.intersectionRatio < 0.3
-    ? fadeOut(".fade-right-sub3")
-    : fadeInSub(".fade-right-sub3");
-
   return (
     <section className="works" ref={animationRef}>
       <div className="works__wrapper container">
@@ -61,7 +46,7 @@ function MyWorks() {
           <h2 className="works__title fade-right3">
             My <span>work</span>s
           </h2>
-          <p className="works__subtitle fade-right-sub3">
+          <p className="works__subtitle fade-right3">
             Below are some of my works. I'll push more works in my{" "}
             <a href="https://github.com/Alehandro26" className="works__git">
               GitHub

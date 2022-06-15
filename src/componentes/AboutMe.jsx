@@ -21,7 +21,7 @@ function AboutMe() {
       x: 0,
       ease: "power4.out",
       stagger: {
-        amount: 0.3,
+        amount: 0.4,
       },
     });
   };
@@ -37,21 +37,6 @@ function AboutMe() {
   intersection && intersection.intersectionRatio < 0.5
     ? fadeOut(".fade-left")
     : fadeIn(".fade-left");
-
-  const fadeInSub = (element) => {
-    gsap.to(element, 1, {
-      opacity: 0.6,
-      x: 0,
-      ease: "power4.out",
-      stagger: {
-        amount: 0.3,
-      },
-    });
-  };
-
-  intersection && intersection.intersectionRatio < 0.5
-    ? fadeOut(".fade-left-sub")
-    : fadeInSub(".fade-left-sub");
 
   return (
     <section className="aboutme" ref={animationRef}>
@@ -69,7 +54,7 @@ function AboutMe() {
           <h2 className="aboutme__title fade-left">
             About <span>me</span>
           </h2>
-          <p className="aboutme__subtitle fade-left-sub">
+          <p className="aboutme__subtitle fade-left">
             Hi. I'm Alexandr, and you? I'm twenty six years old, if you're
             interested, but it doesn't matter anymore. I'm the web-developer
             specializing in layout. I love to see the results of my work and
