@@ -81,21 +81,6 @@ function Skills() {
     ? fadeOut(".fade-right2")
     : fadeIn(".fade-right2");
 
-  const fadeInSub = (element) => {
-    gsap.to(element, 1, {
-      opacity: 0.6,
-      x: 0,
-      ease: "power4.out",
-      stagger: {
-        amount: 0.3,
-      },
-    });
-  };
-
-  intersection && intersection.intersectionRatio < 0.3
-    ? fadeOut(".fade-right-sub2")
-    : fadeInSub(".fade-right-sub2");
-
   return (
     <section className="skills" ref={animationRef}>
       <div className="skills__wrapper">
@@ -103,7 +88,7 @@ function Skills() {
           <h2 className="skills__title fade-right2">
             S<span>kills</span>
           </h2>
-          <p className="skills__subtitle fade-right-sub2">
+          <p className="skills__subtitle fade-right2">
             My level of knowledge is shown below
           </p>
         </div>
