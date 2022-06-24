@@ -12,7 +12,7 @@ function SkillsCard({
   afterTitle,
 }) {
   return (
-    <div className="card fade-right2">
+    <div className="card fade-skills">
       <div className="card__wrapper">
         <div className="card__text">
           <h3 className="card__title">
