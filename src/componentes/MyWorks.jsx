@@ -58,7 +58,7 @@ function MyWorks() {
             title="Kristina Poly"
             subtitle="Demo version site for stylist"
             img={poly}
-            link="kristina-poly.online"
+            link="http://kristina-poly.online/"
           ></WorksCard>
           <WorksCard
             title="Budu"
@@ -72,35 +72,6 @@ function MyWorks() {
             img={solid}
             link="https://solidrus.com/"
           ></WorksCard>
-        </div>
-        <div className="works__look">
-          <ul className="works__list">
-            <li className="works__item">
-              <div href="#" className="works__link">
-                Home
-              </div>
-            </li>
-            <li className="works__item">
-              <div href="#" className="works__link">
-                About
-              </div>
-            </li>
-            <li className="works__item">
-              <div href="#" className="works__link">
-                Pages
-              </div>
-            </li>
-            <li className="works__item">
-              <div href="#" className="works__link">
-                Links
-              </div>
-            </li>
-            <li className="works__item">
-              <div href="#" className="works__link">
-                Gallery
-              </div>
-            </li>
-          </ul>
         </div>
       </div>
     </section>
