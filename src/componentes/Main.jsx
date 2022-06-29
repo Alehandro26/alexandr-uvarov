@@ -89,6 +89,8 @@ function Main() {
       )
       .then(
         (result) => {
+          name.value = "";
+          number.value = "";
           console.log(result.text);
         },
         (error) => {

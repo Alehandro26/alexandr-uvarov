@@ -5,13 +5,13 @@ import App from './App';
 import Home from './pages/Home'
 import Works from './pages/Works'
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
   
     <Routes>
       <Route path="/" element={<App />} >
@@ -19,7 +19,7 @@ root.render(
         <Route path="works" element={<Works />} />
       </Route>
     </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
 
