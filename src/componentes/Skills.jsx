@@ -6,7 +6,7 @@ import js from "../assets/images/icons/js.svg";
 import react from "../assets/images/icons/react.svg";
 import Slider from "react-slick/lib/slider";
 import gsap from "gsap";
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,7 +55,7 @@ function Skills() {
     gsap.to(".fade-skills", {
       scrollTrigger: {
         trigger: ".fade-skills",
-        start: "80px 55%",
+        start: "0 65%",
       },
       opacity: 1,
       x: 0,
