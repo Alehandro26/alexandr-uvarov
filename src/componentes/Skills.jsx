@@ -6,8 +6,9 @@ import js from "../assets/images/icons/js.svg";
 import react from "../assets/images/icons/react.svg";
 import Slider from "react-slick/lib/slider";
 import gsap from "gsap";
-import { useIntersection } from "react-use";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+gsap.registerPlugin(ScrollTrigger);
 
 function Skills() {
   const settings = {
@@ -50,45 +51,30 @@ function Skills() {
     ],
   };
 
-  const animationRef = useRef();
-
-  const intersection = useIntersection(animationRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.3,
-  });
-
-  const fadeIn = (element) => {
-    gsap.to(element, 1, {
+  useEffect(() => {
+    gsap.to(".fade-skills", {
+      scrollTrigger: {
+        trigger: ".fade-skills",
+        start: "80px 55%",
+      },
       opacity: 1,
       x: 0,
+      duration: 1,
       ease: "power4.out",
       stagger: {
-        amount: 0.4,
+        amount: 0.6,
       },
     });
-  };
-
-  const fadeOut = (element) => {
-    gsap.to(element, 1, {
-      opacity: 0,
-      x: -100,
-      ease: "power4.out",
-    });
-  };
-
-  intersection && intersection.intersectionRatio < 0.3
-    ? fadeOut(".fade-right2")
-    : fadeIn(".fade-right2");
+  }, []);
 
   return (
-    <section className="skills" ref={animationRef}>
+    <section className="skills">
       <div className="skills__wrapper">
         <div className="skills__text container">
-          <h2 className="skills__title fade-right2">
+          <h2 className="skills__title fade-skills">
             S<span>kills</span>
           </h2>
-          <p className="skills__subtitle fade-right2">
+          <p className="skills__subtitle fade-skills">
             My level of knowledge is shown below
           </p>
         </div>
