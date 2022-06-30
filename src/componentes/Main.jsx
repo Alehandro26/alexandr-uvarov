@@ -127,21 +127,6 @@ function Main() {
     ? fadeOut(".fade-right")
     : fadeIn(".fade-right");
 
-  const fadeInSub = (element) => {
-    gsap.to(element, 1, {
-      opacity: 0.6,
-      x: 0,
-      ease: "power4.out",
-      stagger: {
-        amount: 0.3,
-      },
-    });
-  };
-
-  intersection && intersection.intersectionRatio < 0.3
-    ? fadeOut(".fade-right-sub")
-    : fadeInSub(".fade-right-sub");
-
   return (
     <section className="main" ref={animationRef}>
       <div className="main__wrapper">
@@ -162,7 +147,7 @@ function Main() {
                 <div className="main__animation"></div>
               </div>
             </div>
-            <p className="main__subtitle fade-right-sub">
+            <p className="main__subtitle fade-right">
               Do you want to get a new website? Do you need to edit an existing
               site? Add content? Okay, text me and rest assured, I'll solve your
               the problem.
