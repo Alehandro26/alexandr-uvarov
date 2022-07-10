@@ -3,73 +3,46 @@ import me from "../assets/images/me.png";
 import qadro from "../assets/images/qadrocopter.png";
 import qadro2 from "../assets/images/qadro2.png";
 import gsap from "gsap";
-import { useIntersection } from "react-use";
-import { useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+import { useEffect } from "react";
+gsap.registerPlugin(ScrollTrigger);
 
 function AboutMe() {
-  const animationRef = useRef(null);
-
-  const intersection = useIntersection(animationRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5,
-  });
-
-  const fadeIn = (element) => {
-    gsap.to(element, 1, {
+  useEffect(() => {
+    gsap.to(".fade-about", {
+      scrollTrigger: {
+        trigger: ".fade-about",
+        start: "0 55%",
+      },
       opacity: 1,
+      scale: 1,
       x: 0,
+      y: 0,
+      duration: 1.2,
       ease: "power4.out",
       stagger: {
-        amount: 0.3,
+        amount: 0.6,
       },
     });
-  };
-
-  const fadeOut = (element) => {
-    gsap.to(element, 1, {
-      opacity: 0,
-      x: 100,
-      ease: "power4.out",
-    });
-  };
-
-  intersection && intersection.intersectionRatio < 0.5
-    ? fadeOut(".fade-left")
-    : fadeIn(".fade-left");
-
-  const fadeInSub = (element) => {
-    gsap.to(element, 1, {
-      opacity: 0.6,
-      x: 0,
-      ease: "power4.out",
-      stagger: {
-        amount: 0.3,
-      },
-    });
-  };
-
-  intersection && intersection.intersectionRatio < 0.5
-    ? fadeOut(".fade-left-sub")
-    : fadeInSub(".fade-left-sub");
+  }, []);
 
   return (
-    <section className="aboutme" ref={animationRef}>
+    <section className="aboutme">
       <div className="aboutme__wrapper container">
-        <div className="aboutme__image-wrap fade-left">
-          <img src={me} alt="Me" className="aboutme__image" />
+        <div className="aboutme__image-wrap">
+          <img src={me} alt="Me" className="aboutme__image fade-about" />
           <div className="aboutme__animated">
-            <img src={qadro} alt="" className="aboutme__qadro" />
+            <img src={qadro} alt="" className="aboutme__qadro fade-about" />
           </div>
           <div className="aboutme__animated-two">
-            <img src={qadro2} alt="" className="aboutme__qadro" />
+            <img src={qadro2} alt="" className="aboutme__qadro fade-about" />
           </div>
         </div>
         <div className="aboutme__text">
-          <h2 className="aboutme__title fade-left">
+          <h2 className="aboutme__title fade-about">
             About <span>me</span>
           </h2>
-          <p className="aboutme__subtitle fade-left-sub">
+          <p className="aboutme__subtitle fade-about">
             Hi. I'm Alexandr, and you? I'm twenty six years old, if you're
             interested, but it doesn't matter anymore. I'm the web-developer
             specializing in layout. I love to see the results of my work and

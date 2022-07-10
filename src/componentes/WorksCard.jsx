@@ -1,7 +1,5 @@
 import { useRef } from "react";
 import "./WorksCard.scss";
-import gsap from "gsap";
-import { useIntersection } from "react-use";
 
 function Card({ img, title, subtitle, link }) {
   const workCardRef = useRef();
@@ -16,37 +14,6 @@ function Card({ img, title, subtitle, link }) {
     workCardRef.current.classList.remove("active");
     body.classList.remove("not-scroll");
   }
-
-  const animationRef = useRef();
-
-  const intersection = useIntersection(animationRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.3,
-  });
-
-  const fadeIn = (element) => {
-    gsap.to(element, 1, {
-      opacity: 1,
-      x: 0,
-      ease: "power4.out",
-      stagger: {
-        amount: 1.5,
-      },
-    });
-  };
-
-  const fadeOut = (element) => {
-    gsap.to(element, 1, {
-      opacity: 0,
-      x: -100,
-      ease: "power4.out",
-    });
-  };
-
-  intersection && intersection.intersectionRatio < 0.3
-    ? fadeOut(".fade-right4")
-    : fadeIn(".fade-right4");
 
   return (
     <div className="work-card" ref={workCardRef}>
@@ -67,8 +34,8 @@ function Card({ img, title, subtitle, link }) {
           </div>
 
           <div className="work-card__text" onClick={workCard}>
-            <h4 className="work-card__title fade-right4">{title}</h4>
-            <p className="work-card__subtitle fade-right4">{subtitle}</p>
+            <h4 className="work-card__title fade-work">{title}</h4>
+            <p className="work-card__subtitle fade-work">{subtitle}</p>
           </div>
           <a
             href={link}

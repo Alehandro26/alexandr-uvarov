@@ -3,65 +3,36 @@ import "./MyWorks.scss";
 import poly from "../assets/images/poly.jpeg";
 import budu from "../assets/images/budu.jpeg";
 import solid from "../assets/images/solid.jpeg";
-import { useRef } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
-import { useIntersection } from "react-use";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+gsap.registerPlugin(ScrollTrigger);
 
 function MyWorks() {
-  const animationRef = useRef();
-
-  const intersection = useIntersection(animationRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.3,
-  });
-
-  const fadeIn = (element) => {
-    gsap.to(element, 1, {
+  useEffect(() => {
+    gsap.to(".fade-work", {
+      scrollTrigger: {
+        trigger: ".fade-work",
+        start: "80px 55%",
+      },
       opacity: 1,
       x: 0,
-      ease: "power4.out",
+      duration: 1.2,
       stagger: {
-        amount: 1,
+        amount: 1.8,
       },
-    });
-  };
-
-  const fadeOut = (element) => {
-    gsap.to(element, 1, {
-      opacity: 0,
-      x: -100,
       ease: "power4.out",
     });
-  };
-
-  intersection && intersection.intersectionRatio < 0.3
-    ? fadeOut(".fade-right3")
-    : fadeIn(".fade-right3");
-
-  const fadeInSub = (element) => {
-    gsap.to(element, 1, {
-      opacity: 0.6,
-      x: 0,
-      ease: "power4.out",
-      stagger: {
-        amount: 0.3,
-      },
-    });
-  };
-
-  intersection && intersection.intersectionRatio < 0.3
-    ? fadeOut(".fade-right-sub3")
-    : fadeInSub(".fade-right-sub3");
+  }, []);
 
   return (
-    <section className="works" ref={animationRef}>
+    <section className="works">
       <div className="works__wrapper container">
         <div className="works__text">
-          <h2 className="works__title fade-right3">
+          <h2 className="works__title fade-work">
             My <span>work</span>s
           </h2>
-          <p className="works__subtitle fade-right-sub3">
+          <p className="works__subtitle fade-work">
             Below are some of my works. I'll push more works in my{" "}
             <a href="https://github.com/Alehandro26" className="works__git">
               GitHub
@@ -71,20 +42,24 @@ function MyWorks() {
         <div className="works__grid">
           <WorksCard
             title="Kristina Poly"
-            subtitle="Demo version site for stylist"
+            subtitle="Site for stylist"
             img={poly}
+            link="http://kristina-poly.online/"
+            klass="fade-work"
           ></WorksCard>
           <WorksCard
             title="Budu"
             subtitle="I created that page, but it has already been slightly modified"
             img={budu}
             link="https://budu.ru/business/online"
+            klass="fade-work-2"
           ></WorksCard>
           <WorksCard
             title="Solid"
             subtitle="Paint company. The code + WordPress"
             img={solid}
             link="https://solidrus.com/"
+            klass="fade-work-3"
           ></WorksCard>
         </div>
       </div>
