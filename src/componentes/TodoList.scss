@@ -77,6 +77,13 @@
     text-transform: capitalize;
     flex: 1 0 30%;
     max-width: 200px;
+    transition: 0.3s;
+
+    &:hover,
+    &:active {
+        box-shadow: 7px 4px 50px rgb(93 12 255);
+        letter-spacing: 2px;
+    }
 
     &.anim {
         transform: translateX(80px);

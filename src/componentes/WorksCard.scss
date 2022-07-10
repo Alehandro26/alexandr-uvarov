@@ -6,6 +6,7 @@
     overflow: hidden;
     cursor: pointer;
     max-width: 400px;
+    box-shadow: 4px 4px 4px #4c4c4c;
 
     &__bgr {
         position: absolute;
@@ -152,7 +153,7 @@
 
 .work-card:nth-child(2) {
     @include tablet {
-    max-width: 550px;
+    max-width: 450px;
     grid-area: budu;
     align-self: center;
     }
