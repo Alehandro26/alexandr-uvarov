@@ -108,7 +108,8 @@ function Main() {
       },
       opacity: 1,
       x: 0,
-      duration: 1,
+      y: 0,
+      duration: 1.2,
       ease: "power4.out",
       stagger: {
         amount: 0.6,
@@ -116,11 +117,42 @@ function Main() {
     });
   }, []);
 
+  useEffect(() => {
+    if (document.documentElement.clientWidth >= 1024) {
+      gsap.to(".fade-main-image", {
+        scrollTrigger: {
+          trigger: ".fade-main-image",
+          start: "0 60%",
+        },
+        opacity: 1,
+        width: "68vw",
+        duration: 1.8,
+        ease: "power4.out",
+        stagger: {
+          amount: 0.6,
+        },
+      });
+    } else {
+      gsap.to(".fade-main-image", {
+        scrollTrigger: {
+          trigger: ".fade-main-image",
+          start: "0 55%",
+        },
+        opacity: 1,
+        duration: 1.8,
+        ease: "power4.out",
+        stagger: {
+          amount: 0.6,
+        },
+      });
+    }
+  }, []);
+
   return (
     <section className="main">
       <div className="main__wrapper">
         <div className="main__content">
-          <div className="main__object fade-main">
+          <div className="main__object fade-main-image">
             <img
               src={require("../assets/images/main.jpg")}
               alt="Main image"
@@ -132,7 +164,7 @@ function Main() {
               <h1 className="main__title fade-main">
                 <span>Web-</span>developer
               </h1>
-              <div className="main__animation-wrapper">
+              <div className="main__animation-wrapper fade-main">
                 <div className="main__animation"></div>
               </div>
             </div>

@@ -62,7 +62,7 @@ function Skills() {
       duration: 1,
       ease: "power4.out",
       stagger: {
-        amount: 0.6,
+        amount: -0.6,
       },
     });
   }, []);

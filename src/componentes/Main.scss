@@ -35,7 +35,6 @@
         padding: 40px 0;
         overflow: hidden;
         opacity: 0;
-        transform: translateX(-100%);
 
         @include tablet {
             margin: 100px 20px 0px;
@@ -47,7 +46,7 @@
             margin: 0;
             position: absolute;
             top: 0;
-            width: 68vw;
+            width: 8vw;
             right: -2.92vw;
             border-radius: 0 0 0 40%;
         }
@@ -86,7 +85,7 @@
 
     &__title {
         white-space: nowrap;
-        transform: translateX(-100%);
+        transform: translateX(-50px) translateY(-50px);
         opacity: 0;
 
         span {
@@ -95,17 +94,18 @@
     }
 
     &__subtitle {
-        transform: translateX(-100%);
+        transform: translateX(-50px);
         opacity: 0;
 
         @include tablet {
-            max-width: 450px;
+            max-width: 550px;
         }
     }
 
     &__animation-wrapper {
         width: 100%;
         padding-right: 15px;
+        opacity: 0;
 
         @include tablet {
             max-width: 200px;
@@ -137,7 +137,7 @@
         border-radius: 15px;
         transition: .3s;
         cursor: pointer;
-        transform: translateX(-100%);
+        transform: translateY(50px);
         opacity: 0;
 
         @include tablet {

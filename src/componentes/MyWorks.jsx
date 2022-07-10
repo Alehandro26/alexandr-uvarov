@@ -17,11 +17,11 @@ function MyWorks() {
       },
       opacity: 1,
       x: 0,
-      duration: 1,
-      ease: "power4.out",
+      duration: 1.2,
       stagger: {
-        amount: 1,
+        amount: 1.8,
       },
+      ease: "power4.out",
     });
   }, []);
 
@@ -45,18 +45,21 @@ function MyWorks() {
             subtitle="Site for stylist"
             img={poly}
             link="http://kristina-poly.online/"
+            klass="fade-work"
           ></WorksCard>
           <WorksCard
             title="Budu"
             subtitle="I created that page, but it has already been slightly modified"
             img={budu}
             link="https://budu.ru/business/online"
+            klass="fade-work-2"
           ></WorksCard>
           <WorksCard
             title="Solid"
             subtitle="Paint company. The code + WordPress"
             img={solid}
             link="https://solidrus.com/"
+            klass="fade-work-3"
           ></WorksCard>
         </div>
       </div>

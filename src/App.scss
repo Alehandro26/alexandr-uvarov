@@ -77,10 +77,10 @@ h1 {
   font-size: 30px;
 
   @include tablet {
-    font-size: 34px;
+    font-size: calc(30px + (6 + 6 * 0.7) * ((100vw - 768px) / 1024));
   }
-  @include laptopXL {
-    font-size: 50px;
+  @include laptop {
+    font-size: calc(32px + (22 + 22 * 0.7) * ((100vw - 1024px) / 1800));
   }
 }
 
@@ -88,10 +88,10 @@ h2 {
   font-size: 28px;
 
   @include tablet {
-    font-size: 32px;
+    font-size: calc(28px + (6 + 6 * 0.7) * ((100vw - 768px) / 1024));
   }
   @include laptopXL {
-    font-size: 46px;
+    font-size: calc(30px + (20 + 20 * 0.7) * ((100vw - 1024px) / 1800));
   }
 }
 
@@ -122,8 +122,8 @@ p {
   @include tablet {
     font-size: 18px;
   }
-  @include laptopXL {
-    font-size: 22px;
+  @include laptop {
+    font-size: calc(14px + (8 + 8 * 0.7) * ((100vw - 1024px) / 1800));
   }
 }
 

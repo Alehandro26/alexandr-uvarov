@@ -15,8 +15,10 @@ function AboutMe() {
         start: "0 55%",
       },
       opacity: 1,
+      scale: 1,
       x: 0,
-      duration: 1,
+      y: 0,
+      duration: 1.2,
       ease: "power4.out",
       stagger: {
         amount: 0.6,
